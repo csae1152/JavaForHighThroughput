@@ -1,0 +1,8 @@
+Understanding sun.misc.Unsafe
+
+1. Native memory allocation
+
+Was there a need in one of your projects to have more entries in an Array than Integer.MAX_VALUE offers ?
+
+Yes, then have a look at the following tutorial.
+
