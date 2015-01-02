@@ -6,3 +6,13 @@ Was there a need in one of your projects to have more entries in an Array than I
 
 Yes, then have a look at the following tutorial.
 
+This tutorial is a quick overview of sun.misc.Unsafe public API and few interesting cases of its usage.
+
+Unsafe instantiation
+
+We need to create instance of Unsafe object. 
+
+There is no simple way to do it like Unsafe unsafe = new Unsafe(), because Unsafe class has private constructor. 
+It also has static getUnsafe() method, but if you naively try to call Unsafe.getUnsafe() you, probably, get SecurityException. 
+Using this method available only from trusted code.
+
