@@ -16,4 +16,13 @@ In this tutorial i will give an overview of how to use the Java language for hig
   - Vanilla uses concurrent writers (even across processes) and file rolling. It's overhead of about 200 nano-seconds per message.
   - Index chronicle is simpler and for small messages can do 20+ million messages per second whereas VanillaChronicle can do about 4 million messages per second.
   - IndexChronicle is faster for single writer (if you have about one million messages per second it shouldn't matter)
+  
+Choosing the right garbage collection mode:
+
+1. Dynamic Garbage Collection Mode 
+2. Static Single-Spaced Parallel Garbage Collection
+3. Static Generational Parallel Garbage Collection
+  
+
+
 
