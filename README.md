@@ -21,7 +21,14 @@ Choosing the right garbage collection mode:
 
 1. Dynamic Garbage Collection Mode 
 2. Static Single-Spaced Parallel Garbage Collection
-3. Static Generational Parallel Garbage Collection
+3. 
+
+Manually Tuning the Nursery Size
+
+The nursery or young generation is the area of free chunks in the heap where objects are allocated when running a generational garbage collector (-Xgc:throughput, -Xgc:genpar or -Xgc:gencon). A nursery is valuable because most objects in a Java application die young. Collecting garbage from the young space is preferable to collecting the entire heap, as it is a less expensive process and most objects in the young space would already be dead when the garbage collection is started.
+
+
+
   
 
 
