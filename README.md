@@ -27,6 +27,28 @@ Manually Tuning the Nursery Size
 
 The nursery or young generation is the area of free chunks in the heap where objects are allocated when running a generational garbage collector (-Xgc:throughput, -Xgc:genpar or -Xgc:gencon). A nursery is valuable because most objects in a Java application die young. Collecting garbage from the young space is preferable to collecting the entire heap, as it is a less expensive process and most objects in the young space would already be dead when the garbage collection is started.
 
+Dynamic Garbage Collection Mode Optimized for Deterministic Pause Times
+
+java -Xgc:deterministic -Xms:1g -Xmx:1g myApplication
+
+Dynamic Garbage Collection Mode Optimized for Short Pauses
+
+Set the pausetime priority as follows:
+
+java -Xgc:pausetime myApplication
+
+Static Generational Concurrent Garbage Collection
+
+To use a generational concurrent garbage collector, enter the following at the command line:
+
+java -Xgc:gencon myApplication
+
+To use a single-spaced concurrent garbage collector, enter the following at the command line:
+
+java -Xgc:singlecon myApplication
+
+
+
 
 
   
