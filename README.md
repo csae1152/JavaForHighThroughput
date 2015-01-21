@@ -47,6 +47,32 @@ To use a single-spaced concurrent garbage collector, enter the following at the 
 
 java -Xgc:singlecon myApplication
 
+We can select a specific garbage collector by using -Xgc:<option>, with option being one of the following:
+
+  - singlecon – Single-space, concurrent garbage collection. This mode reduces application throughput but keeps pause times to a minimum.
+  - 
+  - gencon – Generational, concurrent garbage collection. The gencon mode is better than the singlecon mode for applications that allocate lots of short-lived objects. This mode reduces application throughput but keeps pause times to a minimum.
+  - 
+  - singlepar – Single-space, parallel garbage collection. This mode increases pause times when compared with the concurrent mode but maximizes throughput.
+  - 
+  - genpar – Generational, parallel garbage collection. This mode is generally better than the singlepar mode for applications that allocate lots of short-lived objects. In this mode, a higher number of garbage collections are performed than in the singlepar mode, but the individual pause times are shorter, resulting in lower fragmentation in the old generation space.
+  - 
+  - genconpar – Generational garbage collection. Sets the garbage collection mode to generational with a concurrent mark algorithm and a parallel sweep algorithm.
+  - 
+  - genparcon – Generational garbage collection. Sets the garbage collection mode to generational with a parallel mark algorithm and a concurrent sweep algorithm.
+  
+  - singleconpar – Single-space garbage collection. Sets the garbage collection mode to single-spaced with a concurrent mark algorithm and a parallel sweep algorithm.
+  - 
+  - singleparcon – Single-space garbage collection. Sets the garbage collection mode to single-spaced with a parallel mark and a concurrent sweep algorithm.
+  - 
+  - throughput – The garbage collector is optimized for application throughput. This means that the garbage collector works as effectively as possible, giving as much CPU resources to the Java threads as possible. This might, however, cause non-deterministic pauses when the garbage collector stops all Java threads for garbage collection.
+  - 
+-  pausetime – The garbage collector is optimized for short pauses. This means that the garbage collection works concurrently with the Java application when necessary, in order to avoid pausing the Java threads. This inflicts a slight performance overhead to the application, as the concurrent garbage collector demands more system resources (CPU time and memory) than the parallel garbage collector that is used for optimal throughput. The target pause time is by default 200 milliseconds, which can be changed by using -XpauseTarget.
+
+-  deterministic – Optimizes the garbage collector for very short and deterministic pause times. The garbage collector tries to keep the garbage collection pauses below a given pause target. The performance depends on the application and the hardware. Running on slower hardware, with a different heap size or with a large amount of live data can break the deterministic behavior or cause performance degradation over time; faster hardware or a less amount of live data might allows us to set a lower pause target. The pause target for the deterministic mode is by default 30 milliseconds, which can be changed by using -XpauseTarget
+
+
+
 
 
 
