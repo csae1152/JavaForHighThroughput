@@ -89,7 +89,13 @@ Cache misses are your biggest cost to performance. Use algorithms that are cache
 
 Consider an alternative JVM like Zing from Azul with a pause-less garbage collector.
 
-Most importantly get someone involved with experience. This will save you so much time in the long run.   
+Most importantly get someone involved with experience. This will save you so much time in the long run.
+
+Hypervisor mode and low-latency
+
+- What is hypervisor mode
+
+
 
 
 
