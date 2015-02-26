@@ -110,6 +110,22 @@ Reduce GC pause duration
 
 The young GC pause duration can be reduced by decreasing the young generation size as it may lead to less data being copied in survivor spaces or promoted per collection. However, as previously mentioned, we have to observe the impact of reduced young generation size and the resulting increase in GC frequency on the overall application throughput and latency. The young GC pause duration also depends on tenuring thresholds and the old generation size.
 
+Tune your response time into milliseconds range:
+
+1. Immutable objects.
+2. Less synchronized method
+3. Locking order should be well documented, and handled carefully
+4. Use profiler
+5. Use Amdhal's law, and find the sequential execution path
+6. Use Java 8 concurrency utilities, and locks
+7. Avoid Thread priorities as they are platform dependent
+8. JVM warmup can be used
+9. Prefer unfair locking strategy
+10. Avoid context-switching (many threads lead to counter productive)
+11. Avoid boxing, un-boxing
+12. Give attention to compiler warnings 
+13. Number of threads should be equal or lesser than the number of core
+
 
 
 
