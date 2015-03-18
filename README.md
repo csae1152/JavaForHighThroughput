@@ -127,6 +127,11 @@ Tune your response time into milliseconds range:
 13. Number of threads should be equal or lesser than the number of core
 
 
+PetaPyte JVM
+
+Starting from the observation that Java responds much faster if you can keep your data in memory rather than going to a database or some other external resource, Lawrey described the kind of problems you hit when you go above the 32GB range that Java is reasonably comfortable in. As you’d expect GC pause times become a major problem, but also memory efficiency drops significantly, and you have the problem of how to recover in the event of a failure.
+
+
 
 
 
