@@ -138,6 +138,10 @@ A two- to four-second pause is not acceptable for most enterprise applications, 
 Architecting or modeling deployments in chopped-up large instance pools, even though it leads to a horrible operations monitoring and management situation.
 Tuning and re-tuning the JVM configuration, or even the application, to "avoid" (meaning postpone) the worst-case scenario of a stop-the-world compaction pause. The most that developers can hope for is that when a pause happens, it won't be during a peak load time. This is what I call a Don Quixote task, of chasing an impossible goal.
 
+JAVA 8 Memory layout:
+
+Important: PermGem is replaced with Metaspace.
+
 
 
 
