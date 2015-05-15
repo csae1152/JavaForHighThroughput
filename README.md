@@ -142,6 +142,10 @@ JAVA 8 Memory layout:
 
 Important: PermGem is replaced with Metaspace.
 
+1. Memory layout of classes
+2. Memory layout of Subclasses
+3. Memory layout of inheritance 
+
 
 
 
