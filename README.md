@@ -146,6 +146,11 @@ Important: PermGem is replaced with Metaspace.
 2. Memory layout of Subclasses
 3. Memory layout of inheritance 
 
+What to do in case of GC pause errors:
+ 
+
+
+
 
 
 
