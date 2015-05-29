@@ -146,7 +146,16 @@ Important: PermGem is replaced with Metaspace.
 2. Memory layout of Subclasses
 3. Memory layout of inheritance 
 
-What to do in case of GC pause errors:
+ Turn THP (Transparent Huge Pages) OFF.
+
+2. Set vm.min_free_kbytes to AT LEAST 1GB (8GB on larger systems).
+
+3. Set Swappiness to 0.
+
+4. Set zone_reclaim_mode to 0.
+5. 
+5. Turn HT (Hyper-threading) ON. (double the vcore run queues --> umpteen times lower likelihood of waiting for a cpu).
+
  
 
 
