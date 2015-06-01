@@ -156,7 +156,10 @@ Important: PermGem is replaced with Metaspace.
 5. 
 5. Turn HT (Hyper-threading) ON. (double the vcore run queues --> umpteen times lower likelihood of waiting for a cpu).
 
- 
+
+Secure Coding in the JVM:
+
+Avoid operator buffer overfloatig.
 
 
 
