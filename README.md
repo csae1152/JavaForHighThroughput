@@ -21,7 +21,6 @@ Choosing the right garbage collection mode:
 
 1. Dynamic Garbage Collection Mode 
 2. Static Single-Spaced Parallel Garbage Collection
-3. 
 
 Manually Tuning the Nursery Size
 
@@ -70,8 +69,6 @@ We can select a specific garbage collector by using -Xgc:<option>, with option b
 -  pausetime – The garbage collector is optimized for short pauses. This means that the garbage collection works concurrently with the Java application when necessary, in order to avoid pausing the Java threads. This inflicts a slight performance overhead to the application, as the concurrent garbage collector demands more system resources (CPU time and memory) than the parallel garbage collector that is used for optimal throughput. The target pause time is by default 200 milliseconds, which can be changed by using -XpauseTarget.
 
 -  deterministic – Optimizes the garbage collector for very short and deterministic pause times. The garbage collector tries to keep the garbage collection pauses below a given pause target. The performance depends on the application and the hardware. Running on slower hardware, with a different heap size or with a large amount of live data can break the deterministic behavior or cause performance degradation over time; faster hardware or a less amount of live data might allows us to set a lower pause target. The pause target for the deterministic mode is by default 30 milliseconds, which can be changed by using -XpauseTarget
-
-
 
 Warm up your JVM. Bytecode starts starts off being interpreted for Hotspot and then gets compiled on the server after 10K observations. Tiered Compilation can be a good stop gap.
 
@@ -153,14 +150,12 @@ Important: PermGem is replaced with Metaspace.
 3. Set Swappiness to 0.
 
 4. Set zone_reclaim_mode to 0.
-5. 
 5. Turn HT (Hyper-threading) ON. (double the vcore run queues --> umpteen times lower likelihood of waiting for a cpu).
 
+Tunning factors for high throughput applications:
 
-Secure Coding in the JVM:
-
-Avoid operator buffer overfloatig.
-
+-> chunk size
+-> number of threads
 
 
 
