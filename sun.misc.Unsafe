@@ -16,3 +16,7 @@ There is no simple way to do it like Unsafe unsafe = new Unsafe(), because Unsaf
 It also has static getUnsafe() method, but if you naively try to call Unsafe.getUnsafe() you, probably, get SecurityException. 
 Using this method available only from trusted code.
 
+2. Try to do code reflection with sun.misc.Unsafe
+
+The goal is to show we can "weaver" in code like AspectJ is doing it with the sun.misc.Unsafe library.
+
