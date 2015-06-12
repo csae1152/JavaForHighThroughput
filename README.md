@@ -157,6 +157,15 @@ Tunning factors for high throughput applications:
 -> chunk size
 -> number of threads
 
+Anatomy of a Java object ( Part 1 )
+
+1. Class: A pointer to the class information, which describes the object type. In the case of an array of int fields, this      is a pointer to the int[] class.
+
+2. Flags: A collection of flags that describe the state of the object, including the hash code for the object if it has one,    and the shape of the object (that is, whether or not the object is an array).
+
+3. Lock: The synchronization information for the object. Whether the object is currently synchronized.
+   Size : The size of the array.
+
 
 
 
