@@ -166,6 +166,11 @@ Anatomy of a Java object ( Part 1 )
 3. Lock: The synchronization information for the object. Whether the object is currently synchronized.
    Size : The size of the array.
 
+ThreadLocale and the Garbage Collector:
+
+Don't forget about the remove() method if using no JDK classes.
+
+
 
 
 
