@@ -169,6 +169,12 @@ Anatomy of a Java object ( Part 1 )
 ThreadLocale and the Garbage Collector:
 
 Don't forget about the remove() method if using no JDK classes.
+Low latency coding (less than 10 microseconds).
+High throughput (over 100K request/responses per second).
+Using sun.misc.Unsafe
+Using Chronicle for low latency persistence.
+
+
 
 
 
