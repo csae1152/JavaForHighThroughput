@@ -174,6 +174,8 @@ High throughput (over 100K request/responses per second).
 Using sun.misc.Unsafe
 Using Chronicle for low latency persistence.
 
+Find the "right" way between high throughput and low latencey guide.
+
 
 
 
