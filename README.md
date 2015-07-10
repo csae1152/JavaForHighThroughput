@@ -176,6 +176,12 @@ Using Chronicle for low latency persistence.
 
 Find the "right" way between high throughput and low latencey guide.
 
+Overview of the Java Virtual Machine:
+
+1. Architecture
+
+Why the use of static identifier is evil in distributed VM's.
+
 
 
 
