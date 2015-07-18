@@ -176,11 +176,11 @@ Using Chronicle for low latency persistence.
 
 Find the "right" way between high throughput and low latencey guide.
 
-Overview of the Java Virtual Machine:
+A Java Garbage collection mini tutorial
 
-1. Architecture
-
-Why the use of static identifier is evil in distributed VM's.
+1. Overview of different garbage collection strategies.
+2. Old space vs. young space.
+3. Implementing our own gc strategy.
 
 
 
