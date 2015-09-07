@@ -181,6 +181,7 @@ A Java Garbage collection mini tutorial
 1. Overview of different garbage collection strategies.
 2. Old space vs. young space.
 3. Implementing our own gc strategy.
+4. Differences in garbage collection strategy Java 7 vs. Java 8
 
 
 
