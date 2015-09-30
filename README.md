@@ -108,6 +108,7 @@ Reduce GC pause duration
 The young GC pause duration can be reduced by decreasing the young generation size as it may lead to less data being copied in survivor spaces or promoted per collection. However, as previously mentioned, we have to observe the impact of reduced young generation size and the resulting increase in GC frequency on the overall application throughput and latency. The young GC pause duration also depends on tenuring thresholds and the old generation size.
 
 Tune your response time into milliseconds range:
+================================================
 
 1. Immutable objects.
 2. Less synchronized method
@@ -129,6 +130,7 @@ PetaPyte JVM
 Starting from the observation that Java responds much faster if you can keep your data in memory rather than going to a database or some other external resource, Lawrey described the kind of problems you hit when you go above the 32GB range that Java is reasonably comfortable in. As you’d expect GC pause times become a major problem, but also memory efficiency drops significantly, and you have the problem of how to recover in the event of a failure.
 
 JVM performance optimization
+============================
 
 A two- to four-second pause is not acceptable for most enterprise applications, so Java application instances are stalled out at 2 to 4 GB, despite their need for more memory. On some 64-bit systems, with lots of JVM tuning for scale, it is possible to run 16 GB or even 20 GB heaps and meet typical response-time SLAs. But compared to where Java heap sizes should be today, we're still way off. The limitation lies in the JVM's inability to handle fragmentation without a stop-the-world GC. As a result, Java application developers are stuck doing two tasks that most of us deplore:
 
@@ -136,6 +138,7 @@ Architecting or modeling deployments in chopped-up large instance pools, even th
 Tuning and re-tuning the JVM configuration, or even the application, to "avoid" (meaning postpone) the worst-case scenario of a stop-the-world compaction pause. The most that developers can hope for is that when a pause happens, it won't be during a peak load time. This is what I call a Don Quixote task, of chasing an impossible goal.
 
 JAVA 8 Memory layout:
+=====================
 
 Important: PermGem is replaced with Metaspace.
 
