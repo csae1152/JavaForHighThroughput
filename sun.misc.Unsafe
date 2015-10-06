@@ -20,3 +20,10 @@ Using this method available only from trusted code.
 
 The goal is to show we can "weaver" in code like AspectJ is doing it with the sun.misc.Unsafe library.
 
+DISCUSSION:
+
+Oracle plans in JDK 9 to restrict access to sun.misc.Unsafe.
+
+
+
+
