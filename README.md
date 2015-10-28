@@ -200,9 +200,31 @@ Hints for heap space friendly programming :-)
 
 - be careful with String, StringBuffer and StringReader
 
+How to create a heap dump ?
+===========================
+
+JVM-parameter
+
+You can start the JVM with different options to create heap dumps:
+
+- XX:+HeapDumpOnOutOfMemoryError
+
+A heap dump will be create automatically if a OutOfMemoryError has been thrown:
+
+- XX:+HeapDumpOnCtrlBreak
+
+Creates a heap dump if the correspondending keys are pressed:
+
+- agentlib:hprof=heap=dump,format=b,doe=y
+
+It uses a HPROF-agent.
 
 
 
+
+
+  
+ 
 
 
 
