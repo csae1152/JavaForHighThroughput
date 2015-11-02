@@ -1,6 +1,7 @@
 Understanding sun.misc.Unsafe
 
 1. Native memory allocation
+===========================
 
 Was there a need in one of your projects to have more entries in an Array than Integer.MAX_VALUE offers ?
 
@@ -17,6 +18,7 @@ It also has static getUnsafe() method, but if you naively try to call Unsafe.get
 Using this method available only from trusted code.
 
 2. Try to do code reflection with sun.misc.Unsafe
+=================================================
 
 The goal is to show we can "weaver" in code like AspectJ is doing it with the sun.misc.Unsafe library.
 
