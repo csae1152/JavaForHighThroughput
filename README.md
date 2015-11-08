@@ -219,6 +219,18 @@ Creates a heap dump if the correspondending keys are pressed:
 
 It uses a HPROF-agent.
 
+Comparing Java and C++ for low latency applications
+===================================================
+
+The ability to create, destroy and reset objects as and when I want. My biggest convenience with C++ is the ability to call an objects destructor without deallocating the objects memory.
+
+The ability to directly use macros, GCC directives ( for stuff like branch prediction) and in line assembly. 
+
+The possibility of hand coding a latency critical sub routine in assembly and directly integrating it with code is priceless.
+Native OS calls( rare) , seamless shared memory and the ability to do certain tweaks like creating NUMA aware algorithms, pinning certain threads to cores, DDIO etc. 
+
+These things definitely help shave anywhere from 2 to 10 micros off your trading stack depending on what you are upto.
+
 
 
 
