@@ -229,6 +229,8 @@ The ability to directly use macros, GCC directives ( for stuff like branch predi
 The possibility of hand coding a latency critical sub routine in assembly and directly integrating it with code is priceless.
 Native OS calls( rare) , seamless shared memory and the ability to do certain tweaks like creating NUMA aware algorithms, pinning certain threads to cores, DDIO etc. 
 
+How to write your own sub routine in assembly in integrate it into your java application.
+
 These things definitely help shave anywhere from 2 to 10 micros off your trading stack depending on what you are upto.
 
 
