@@ -240,6 +240,11 @@ The JRockit JVM Runs JIT Compilation
 
 The first step of code generation is the Just-In-Time (JIT) compilation. This compilation allows your Java application to start and run while the code that is generated is not highly optimized for the platform. Although the JIT is not actually part of the JVM standard, it is, nonetheless, an essential component of Java. In theory, the JIT comes into use whenever a Java method is called, and it compiles the bytecode of that method into native machine code, thereby compiling it “just in time” to execute.
 
+Java data structures for high throughput
+========================================
+
+
+
 
 
 
