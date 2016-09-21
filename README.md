@@ -243,6 +243,17 @@ The first step of code generation is the Just-In-Time (JIT) compilation. This co
 Java data structures for high throughput
 ========================================
 
+Stream processing is a programming paradigm fit for a class
+of data driven applications which must manipulate highvolumes
+of data in a timely and responsive fashion. Example
+applications include video processing, digital signal processing,
+monitoring of business processes and intrusion detection.
+While some applications lend themselves naturally to a
+distributed implementation, we focus on single node systems
+and, in particular, on programming language support for ef-
+ficient implementation of systems that require microsecond
+latencies and low packet drop rates.
+
 
 
 
