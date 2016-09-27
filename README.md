@@ -254,6 +254,8 @@ and, in particular, on programming language support for ef-
 ficient implementation of systems that require microsecond
 latencies and low packet drop rates.
 
+(Near) realtime data processing
+
 
 
 
