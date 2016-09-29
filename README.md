@@ -254,7 +254,14 @@ and, in particular, on programming language support for ef-
 ficient implementation of systems that require microsecond
 latencies and low packet drop rates.
 
-(Near) realtime data processing
+Using Java 8 new features for building high throughput applications
+
+ 1. Lambdas
+ 
+ 
+ 
+
+
 
 
 
