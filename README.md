@@ -11,12 +11,20 @@ In this tutorial i will give an overview of how to use the Java language for hig
     2. If your goal is low latency, you have to keep your system as simple as possible. The less the system has to do the          less time it takes.
     3. Understand what critical code is doing in your application.
   
+  Micro-bursts are critical to understanding your system.
+
+The performance of some systems are characterised in terms of transactions per day.  This implies that if no transactions were completed for the first 23 hours and all of them completed in the last hour, you would still perform this many transactions per day.  Often the transactions per day is quoted because its a higher numbers, but in my case having all day to smooth out the work load sounds like a luxury.
+
+Some systems might be characterised in terms of the number of transactions per second.  This may imply that those transactions can start and complete in one second, but not always.  If you have 1000 transactions and one comes in every milli-seconds, you get an even response time.  What I find more interesting is the number of transactions in the busiest second of a day.  This gives you an indication of the flow rate your system should be able to handle.
+  
+  
+  
   Chronicle vs. Vanilla:
 
   - Vanilla uses concurrent writers (even across processes) and file rolling. It's overhead of about 200 nano-seconds per message.
   - Index chronicle is simpler and for small messages can do 20+ million messages per second whereas VanillaChronicle can do about 4 million messages per second.
   - IndexChronicle is faster for single writer (if you have about one million messages per second it shouldn't matter)
-  
+     
 Choosing the right garbage collection mode:
 
 1. Dynamic Garbage Collection Mode 
