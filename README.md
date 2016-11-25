@@ -16,8 +16,8 @@ In this tutorial i will give an overview of how to use the Java language for hig
 The performance of some systems are characterised in terms of transactions per day.  This implies that if no transactions were completed for the first 23 hours and all of them completed in the last hour, you would still perform this many transactions per day.  Often the transactions per day is quoted because its a higher numbers, but in my case having all day to smooth out the work load sounds like a luxury.
 
 Some systems might be characterised in terms of the number of transactions per second.  This may imply that those transactions can start and complete in one second, but not always.  If you have 1000 transactions and one comes in every milli-seconds, you get an even response time.  What I find more interesting is the number of transactions in the busiest second of a day.  This gives you an indication of the flow rate your system should be able to handle.
-  
-  
+
+How do use chronicle - a "Hello World" example 
   
   Chronicle vs. Vanilla:
 
