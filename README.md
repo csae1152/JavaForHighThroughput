@@ -17,6 +17,10 @@ The performance of some systems are characterised in terms of transactions per d
 
 Some systems might be characterised in terms of the number of transactions per second.  This may imply that those transactions can start and complete in one second, but not always.  If you have 1000 transactions and one comes in every milli-seconds, you get an even response time.  What I find more interesting is the number of transactions in the busiest second of a day.  This gives you an indication of the flow rate your system should be able to handle.
 
+Multi transaction databases:
+
+How we can handle multiple connections without running into a deadlock?
+
 How do use chronicle - a "Hello World" example 
   
   Chronicle vs. Vanilla:
