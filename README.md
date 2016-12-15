@@ -278,6 +278,13 @@ Increasing the preferred TLA size speeds up allocation of small objects when eac
 
 In Oracle JRockit JVM R27.3 and later releases the preferred TLA size also determines the size limit for objects allocated in the nursery. Increasing the TLA size will thus also allow larger objects to be allocated in the nursery, which is beneficial for applications that allocate a lot of large objects. In older versions you need to set both the TLA size and the Large Object Limit to allow larger objects to be allocated in the nursery. A JRA recording will show you statistics on the sizes of large objects allocated by your application. For good performance you can try setting the preferred TLA size at least as large as the largest object allocated by your application.
  
+Manually Tune Compaction
+
+Compaction is the process of moving chunks of allocated space toward the lower end of the heap, helping to create contiguous free memory at the other end. The JRockit JVM does partial compaction of the heap at each old collection.
+
+The default compaction setting for static garbage collectors (-Xgc or -XXsetGC) use a dynamic compaction scheme that tries to avoid “peaks” in the compaction times. This is a compromise between keeping garbage collection pauses even and maintaining a good throughput, so it doesn't necessarily give the best possible throughput. Tuning the compaction can pay off well, depending on the application's characteristics.
+
+There are two ways to tune the compaction for better throughput; increasing the size of the compaction area and increasing the compact set limit. Increasing the size of the compaction area will help reduce the fragmentation on the heap. Increasing the compact set limit will implicitly allow larger areas to be compacted at each garbage collection. This reduces the garbage collection frequency and makes allocation of large objects faster, thus improving the throughput.
  
  
 
