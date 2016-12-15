@@ -269,6 +269,14 @@ ficient implementation of systems that require microsecond
 latencies and low packet drop rates.
 
 Abstract Syntax Tree and execution speed.
+
+Tune the Thread-Local Area Size
+
+Thread Local Areas (TLAs) are chunks of free memory used for object allocation. The TLAs are reserved from the heap and given to the Java threads on demand, so that the Java threads can allocate objects without having to synchronize with the other Java threads for each object allocation.
+
+Increasing the preferred TLA size speeds up allocation of small objects when each Java thread allocates a lot of small objects, as the threads won’t have to synchronize to get a new TLA as often.
+
+In Oracle JRockit JVM R27.3 and later releases the preferred TLA size also determines the size limit for objects allocated in the nursery. Increasing the TLA size will thus also allow larger objects to be allocated in the nursery, which is beneficial for applications that allocate a lot of large objects. In older versions you need to set both the TLA size and the Large Object Limit to allow larger objects to be allocated in the nursery. A JRA recording will show you statistics on the sizes of large objects allocated by your application. For good performance you can try setting the preferred TLA size at least as large as the largest object allocated by your application.
  
  
  
