@@ -285,6 +285,9 @@ Compaction is the process of moving chunks of allocated space toward the lower e
 The default compaction setting for static garbage collectors (-Xgc or -XXsetGC) use a dynamic compaction scheme that tries to avoid “peaks” in the compaction times. This is a compromise between keeping garbage collection pauses even and maintaining a good throughput, so it doesn't necessarily give the best possible throughput. Tuning the compaction can pay off well, depending on the application's characteristics.
 
 There are two ways to tune the compaction for better throughput; increasing the size of the compaction area and increasing the compact set limit. Increasing the size of the compaction area will help reduce the fragmentation on the heap. Increasing the compact set limit will implicitly allow larger areas to be compacted at each garbage collection. This reduces the garbage collection frequency and makes allocation of large objects faster, thus improving the throughput.
+
+High througput data structures
+==============================
  
  
 
