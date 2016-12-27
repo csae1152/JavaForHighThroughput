@@ -290,6 +290,8 @@ High througput data structures
 ==============================
 
 An overview of such kind of data structures
+
+Google Guava API usage
  
  
 
