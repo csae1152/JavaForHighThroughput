@@ -288,6 +288,8 @@ There are two ways to tune the compaction for better throughput; increasing the 
 
 High througput data structures
 ==============================
+
+An overview of such kind of data structures
  
  
 
