@@ -289,11 +289,13 @@ There are two ways to tune the compaction for better throughput; increasing the 
 High througput data structures
 ==============================
 
-An overview of such kind of data structures
-
-Google Guava API usage
-
-Java GC and hight througput
+If you want to implement fast and correct monetary arithmetic operations in Java, stick to the following rules:
+  
+  Store monetary values in the smallest currency units (for example, cents) in long variables.
+  Avoid working with non-integral values while using double (calculate in the smallest currency units).
+  Add/subtract using long.
+  Round any multiplication/division results using Math.round/rint/ceil/floor (per your system requirements).
+  Your calculations should fit into 52 bits (double precision).
  
  
 
