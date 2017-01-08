@@ -26,6 +26,8 @@ DISCUSSION:
 
 Oracle plans in JDK 9 to restrict access to sun.misc.Unsafe.
 
+Do you think this is a good idea ?
+
 
 
 
