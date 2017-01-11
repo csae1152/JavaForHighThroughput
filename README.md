@@ -296,6 +296,11 @@ If you want to implement fast and correct monetary arithmetic operations in Java
   Add/subtract using long.
   Round any multiplication/division results using Math.round/rint/ceil/floor (per your system requirements).
   Your calculations should fit into 52 bits (double precision).
+  
+ 
+Comparing for and while loop for high througput.
+
+1. for-loop
  
  
 
