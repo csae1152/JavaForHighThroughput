@@ -300,7 +300,7 @@ If you want to implement fast and correct monetary arithmetic operations in Java
  
 Comparing for and while loop for high througput.
 
-1. for-loop
+1. for-loop vs. while-loop
  
  
 
