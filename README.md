@@ -311,6 +311,18 @@ What is Low-Latency Java
 – Financial
 • Automatic trading
 • Matching server
+
+Generational Concurrent Collectors
+• Use Case
+– Normal heap sizes
+– Reasonable amount of live data
+• Nursery Collector
+– Stop the world
+– Parallel
+• Old Collection
+– Mostly concurrent Mark and Sweep
+• Some short parallel pauses
+– Partial compaction
  
  
 
