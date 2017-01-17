@@ -301,6 +301,16 @@ If you want to implement fast and correct monetary arithmetic operations in Java
 Comparing for and while loop for high througput.
 
 1. for-loop vs. while-loop
+
+What is Low-Latency Java
+
+• Response Time Requirements
+– Typical latency requirement around 5 – 50 ms
+– Max latency = transaction time + max pause time
+• Typical Applications
+– Financial
+• Automatic trading
+• Matching server
  
  
 
