@@ -323,6 +323,10 @@ Generational Concurrent Collectors
 – Mostly concurrent Mark and Sweep
 • Some short parallel pauses
 – Partial compaction
+
+When is the right time to optimize GC?
+
+GC behavior can vary with code-level optimizations and workloads. So it is important to tune GC on a codebase that is near completion and includes performance optimizations. But it is also necessary to perform preliminary analysis on an end-to-end basic prototype with stub computation code and synthetic workloads representative of production environments. This will help capture realistic bounds on latency and throughput based on the architecture and guide the decision on whether to scale up or scale out.
  
  
 
