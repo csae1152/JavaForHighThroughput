@@ -327,6 +327,10 @@ Generational Concurrent Collectors
 When is the right time to optimize GC?
 
 GC behavior can vary with code-level optimizations and workloads. So it is important to tune GC on a codebase that is near completion and includes performance optimizations. But it is also necessary to perform preliminary analysis on an end-to-end basic prototype with stub computation code and synthetic workloads representative of production environments. This will help capture realistic bounds on latency and throughput based on the architecture and guide the decision on whether to scale up or scale out.
+
+Stop The World and gather data: The importance of GC logs
+
+The richest source of data for the state of garbage collection in a system based on a HotSpot JVM are the GC logs. If your JVM is not generating GC logs with timestamps, you’re missing out on a critical source of data to analyze and solve pausing issues. This is true for development environments, staging, load testing and most importantly, in production. You can get data about all GC events in your system, whether they were completed concurrently or caused a stop-the-world pause: how long did they take, how much CPU they consumed, and how much memory was freed. From this data, you’re able to understand the frequency and duration of these pauses, their overhead, and move on to taking actions to reduce them.
  
  
 
