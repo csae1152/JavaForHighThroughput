@@ -331,6 +331,8 @@ GC behavior can vary with code-level optimizations and workloads. So it is impor
 Stop The World and gather data: The importance of GC logs
 
 The richest source of data for the state of garbage collection in a system based on a HotSpot JVM are the GC logs. If your JVM is not generating GC logs with timestamps, you’re missing out on a critical source of data to analyze and solve pausing issues. This is true for development environments, staging, load testing and most importantly, in production. You can get data about all GC events in your system, whether they were completed concurrently or caused a stop-the-world pause: how long did they take, how much CPU they consumed, and how much memory was freed. From this data, you’re able to understand the frequency and duration of these pauses, their overhead, and move on to taking actions to reduce them.
+
+With fastutil 6, a new set of classes makes it possible to handle very large collections: in particular, collections whose size exceeds 231. Big arrays are arrays-of-arrays handled by a wealth of static methods that act on them as if they were monodimensional arrays with 64-bit indices, and big lists provide 64-bit list access. The size of a hash big set is limited only by the amount of core memory. The usual methods from java.util.Arrays and similar classes have been extended to big arrays: have a look at the Javadoc documentation of BigArrays and IntBigArrays to get an idea of the generic and type-specific methods available.
  
  
 
