@@ -336,6 +336,9 @@ With fastutil 6, a new set of classes makes it possible to handle very large col
 
 fastutil provides in many cases the fastest implementations available. Please have a look at recent benchmarks, as these ones. You can find many other implementations of primitive collections (e.g., HPPC, Koloboke, etc.). Sometimes authors are a little bit quick in defining their implementations the “fastest available“: the truth is, you have to take decisions in any implementation. These decisions make your implementation faster of slower in different scenarios. I suggest to always test speed within your own application, rather than relying on general benchmarks, and ask the authors for suggestions about how to use the libraries in an optimal way. In particular, when testing hash-based data structures you should always set explicitly the load factor, as speed is strongly dependent on the length of collision chains.
  
+ Going into the ultra low latency area...
+ 
+ Respond times lower than 5 ms.
  
 
 
