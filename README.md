@@ -341,9 +341,13 @@ fastutil provides in many cases the fastest implementations available. Please ha
  Respond times lower than 5 ms.
  
 FastUtil supports that standard Java iteration approaches of using an explicit iterator and using the Java SE 5-introduced for-each loop. FastUtil collections even support the JDK 8 style using .forEach (assuming code is built and run on JDK 8) because the FastUtil collections implement java.lang.Iterable. These are demonstrated in the next code listing.
-Iterating FastUtil Collections in Standard Java Style
-01
-/**
+Iterating FastUtil Collections in Standard Java Style.
+
+Designing high throughput applications with Java 8.
+
+
+
+
 
  
 
