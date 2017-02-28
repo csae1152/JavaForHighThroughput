@@ -345,6 +345,8 @@ Iterating FastUtil Collections in Standard Java Style.
 
 Designing high throughput applications with Java 8.
 
+Java 8 Streams and concurrency.
+
 
 
 
