@@ -347,6 +347,8 @@ Designing high throughput applications with Java 8.
 
 Java 8 Streams and concurrency.
 
+You can pass a lambda to a Stream. You don't have to take care about concurrency.
+
 
 
 
