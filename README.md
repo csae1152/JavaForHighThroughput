@@ -353,6 +353,16 @@ When is the right time to optimize GC?
 
 GC behavior can vary with code-level optimizations and workloads. So it is important to tune GC on a codebase that is near completion and includes performance optimizations. But it is also necessary to perform preliminary analysis on an end-to-end basic prototype with stub computation code and synthetic workloads representative of production environments. This will help capture realistic bounds on latency and throughput based on the architecture and guide the decision on whether to scale up or scale out.
 
+Steps to optimize GC
+
+Here are some high level steps to optimize GC for high-throughput, low-latency requirements. Also included, are the details of how this was done for the feed data platform prototype. We saw the best GC performance with ParNew/CMS, though we also experimented with the G1 garbage collector.
+
+1. Understand the basics of GC
+Understanding how GC works is important because of the large number of variables that need to be tuned. Oracle's whitepaper on Hotspot JVM Memory Management is an excellent starting point to become familiar with GC algorithms in Hotspot JVM. To understand the theoretical aspects of the G1 collector, check out this paper.
+
+2. Scope out GC requirements
+There are certain characteristics of GC that you should optimize, to reduce its overhead on application performance. Like throughput and latency, these GC characteristics should be observed over a long-running test to ensure that the application can handle variance in traffic while going through multiple GC cycles.
+
 
 
 
