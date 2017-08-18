@@ -1,0 +1,9 @@
+Introduction to Shenandoah
+==========================
+
+Comparison between the following strategies:
+
+Sequential GC
+Parallel GC
+Concurrent Mark and Sweep
+Shenandoah
