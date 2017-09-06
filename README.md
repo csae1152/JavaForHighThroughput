@@ -363,6 +363,10 @@ Understanding how GC works is important because of the large number of variables
 2. Scope out GC requirements
 There are certain characteristics of GC that you should optimize, to reduce its overhead on application performance. Like throughput and latency, these GC characteristics should be observed over a long-running test to ensure that the application can handle variance in traffic while going through multiple GC cycles.
 
+JMH profilers are a cheap and convenient way to find out the bottlenecks in your microbenchmarks: they try to avoid measuring as much of JMH code as possible and you can use any subset of them simultaneously.
+STACK profiler makes a thread dump every 10 ms by default, but you may probably want to decrease this interval a little on powerful boxes.
+JIT compiler profilers (COMP / HS_COMP) are recommended for use on most of benchmarks - they will let you know if you have insufficiently warmed up your code.
+
 
 
 
