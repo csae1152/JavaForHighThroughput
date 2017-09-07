@@ -1,0 +1,9 @@
+Operating systems: Networking stack
+
+There are countless books, videos, and tutorials for the tuning the Linux networking stack. 
+And sadly tons of “sysctl.conf cargo-culting” that comes with them. 
+Even though recent kernel versions do not require as much tuning as they used 
+to 10 years ago and most of the new TCP/IP features are enabled and well-tuned by default, people are still 
+copy-pasting their old sysctls.conf that they’ve used to tune 2.6.18/2.6.32 kernels.
+
+
