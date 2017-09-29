@@ -7,3 +7,18 @@ Sequential GC
 Parallel GC
 Concurrent Mark and Sweep
 Shenandoah
+
+Shenandoah
+
+We have outlined all of the production-ready algorithms in HotSpot that you can just take and use right away. 
+There is another one in the making, a so-called Ultra-Low-Pause-Time Garbage Collector. It is aimed for large multi-core 
+machines with large heaps, the goal is to manage heaps of 100GB and larger with pauses of 10ms or shorter. This is traded 
+off against throughput: the implementers are aiming at a no more than 10% of a performance penalty for applications with no GC pauses.
+We are not going to go into the implementation details before the new algorithm is released as production-ready, but it 
+also builds upon many of the ideas already covered in earlier chapters, such as concurrent marking and incremental 
+collecting. It does a lot of things differently, however. 
+
+It does not split the heap into multiple generations, instead h
+aving a single space only. That’s right, Shenandoah is not a generational garbage collector. This allows it to get rid 
+of card tables and remembered sets. It also uses forwarding pointers and a Brooks style read barrier to allow for 
+concurrent copying of live objects, thus reducing the number and duration of pauses.
