@@ -367,6 +367,35 @@ JMH profilers are a cheap and convenient way to find out the bottlenecks in your
 STACK profiler makes a thread dump every 10 ms by default, but you may probably want to decrease this interval a little on powerful boxes.
 JIT compiler profilers (COMP / HS_COMP) are recommended for use on most of benchmarks - they will let you know if you have insufficiently warmed up your code.
 
+Performance techniques used in the Hotspot JVM
+==============================================
+
+Constants
+
+Use constants when you can.
+It's OK to store them in local variables; the SSA representation tends to keep them visible.
+It's OK to store them in static final fields, too.
+Static final fields can hold non-primitive, non-string constants.
+The class of a static final field value is also constant, as is the array length (if it's an array).
+
+Low-level safety checks
+
+Null checks are cheap. They usually fold straight into a related memory access instruction, and use the CPU bus logic to catch nulls. (Deoptimization follows, with regenerated code containing an explicit check.)
+User-written null checks are in most cases functionally identical to those inserted by the JVM.
+Null checks can be hoisted manually, and suppress implicit null checks in dominated blocks.
+Similar points can be made about other simple predicates, like class checks and range checks.
+All such checks, whether implicit or manually written, are aggressively folded to constants.
+
+Loops
+
+The server compiler likes a loop with an int counter (int i = 0), a constant stride (i++), and loop-invariant limit (i <= n).
+Loops over arrays work especially well when the compiler can relate the counter limit to the length of the array(s).
+For long loops over arrays, the majority of iterations are free of individual range checks.
+Loops are typically peeled by one iteration, to "shake out" tests which are loop invariant but execute only on a non-zero tripcount. Null checks are the key example.
+If a loop contains a call, it is best if that call is inlined, so that loop can be optimized as a whole.
+A loop can have multiple exits. Any deoptimization point counts as a loop exit.
+If your loop has a rare exceptional condition, consider exiting to another (slower) loop when it happens.
+
 
 
 
