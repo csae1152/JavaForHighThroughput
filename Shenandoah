@@ -22,3 +22,10 @@ It does not split the heap into multiple generations, instead h
 aving a single space only. That’s right, Shenandoah is not a generational garbage collector. This allows it to get rid 
 of card tables and remembered sets. It also uses forwarding pointers and a Brooks style read barrier to allow for 
 concurrent copying of live objects, thus reducing the number and duration of pauses.
+
+Shenandoah 2.0
+
+● Tracing live objects
+● Copying objects
+● Updating references
+● Walking the stack frames and other roots
