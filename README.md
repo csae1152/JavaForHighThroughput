@@ -449,6 +449,19 @@ If you are compiling a non-Java language, consider using standard mangling conve
 If you are generating almost the same class many times in a row, with small variations, factor out the repeating parts into a superclass or static helper class.
 For small variations in the remaining part, consider using a single named class as a template and loading it multiple times as an anonymous class with constant pool edits. Anonymous classes load and unload faster than named ones.
 
+Select a Garbage Collector
+The choice of a garbage collection mode or static strategy does not in itself affect memory footprint noticeably, but choosing the right garbage collection strategy may allow you to reduce the heap size without a major performance degradation.
+
+If your application uses a lot of temporary objects you should consider using a generational garbage collection strategy. The use of a nursery reduces fragmentation and thus allows for a smaller heap.
+
+The concurrent garbage collector must start garbage collections before the heap is entirely full, to allow Java threads to continue allocating objects during the garbage collection. This means that the concurrent garbage collector requires a larger heap than the parallel garbage collector, and thus your primary choice for a small memory footprint is a parallel garbage collector.
+
+The default garbage collection mode chooses between a generational parallel garbage collection strategy and a non-generational parallel garbage collection strategy, depending on the sizes of the objects that your application allocate. This means that the default garbage collector is a good choice when you want to minimize the memory footprint.
+
+If you want to use a static garbage collection strategy, you can specify the strategy with the -Xgc command line option; for example:
+
+java -Xgc:genpar myApplication
+
 
 
 
