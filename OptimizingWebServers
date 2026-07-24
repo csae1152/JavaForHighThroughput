@@ -1,4 +1,4 @@
-Operating systems: Networking stack o
+Operating systems: Networking stack overview
 
 There are countless books, videos, and tutorials for the tuning the Linux networking stack. 
 And sadly tons of “sysctl.conf cargo-culting” that comes with them. 
